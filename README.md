@@ -57,7 +57,7 @@ PipeDreams is a data exploration and visualization tool designed to be simple, f
      ```
 
    The application will open in your default web browser at `http://localhost:8501`, and will look like this:
-   ![PipeDreams - Enhanced Data Explorer](images/Image 10-31-24 at 11.05 AM)
+   ![PipeDreams - Enhanced Data Explorer](images/running_broswer.jpeg)
 
 5. **Deactivate the virtual environment** (when finished):
    ```bash
