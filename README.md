@@ -13,7 +13,31 @@ PipeDreams is a data exploration and visualization tool designed to be simple, f
 - **Clustering Analysis**: Use KMeans clustering to identify natural groupings within the data, helping to segment and classify.
 - **Predictive Analysis**: A synthetic column (`Annual Purchase Amount`) is included for testing linear regression, allowing users to explore predictive analysis features.
 
-## Getting Started
+## Getting Started with Docker
+
+You can run PipeDreams using Docker to avoid setting up dependencies locally. The pre-built Docker image is available on [DockerHub](https://hub.docker.com/repository/docker/anuclei/pipedreams).
+
+### Pulling the Docker Image
+
+Pull the latest Docker image from DockerHub:
+
+```bash
+docker pull anuclei/pipedreams:latest
+```
+
+### Running the Docker Container
+
+Run the application with Docker, exposing it on port 8501:
+
+```bash
+docker run -p 8501:8501 anuclei/pipedreams:latest
+```
+
+Once the container is running, open your browser and go to `http://localhost:8501` to access the application.
+
+## Manual Installation
+
+If you prefer not to use Docker, you can set up the app manually.
 
 ### Prerequisites
 
@@ -56,17 +80,16 @@ PipeDreams is a data exploration and visualization tool designed to be simple, f
      streamlit run app.py
      ```
 
-   The application will open in your default web browser at `http://localhost:8501`, and will look like this:
-   ![PipeDreams - Enhanced Data Explorer](images/running_broswer.jpeg)
+   The application will open in your default web browser at `http://localhost:8501`.
 
 5. **Deactivate the virtual environment** (when finished):
    ```bash
    deactivate
    ```
 
-### How to Use
+## How to Use
 
-1. Start the application by following the setup steps above.
+1. Start the application by following the setup steps above (or run it via Docker).
 2. **Upload a CSV file** using the file uploader in the app, or view the **default dataset** if no file is uploaded.
 3. Explore the data with built-in ETL transformations and interactive visualizations.
 4. Perform **clustering analysis** and **predictive analysis** on available data.
@@ -79,4 +102,3 @@ PipeDreams is a data exploration and visualization tool designed to be simple, f
 ### Default Dataset: `customers-100000.csv`
 
 The default dataset, `customers-100000.csv`, is located in the `data/` directory. If no CSV file is uploaded, this dataset will automatically load, allowing users to test the ETL transformations, visualizations, clustering, and predictive analysis features without needing their own data file.
-```
