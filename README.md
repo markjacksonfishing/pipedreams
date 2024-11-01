@@ -87,7 +87,7 @@ If you prefer not to use Docker, you can set up the app manually.
      ```
 
    The application will open in your default web browser at `http://localhost:8501` and will look like this:
-![PipeDreams Browser](images/running_broswer.jepg)
+![PipeDreams Browser](images/running_broswer.jpeg)
 
 5. **Deactivate the virtual environment** (when finished):
    ```bash
