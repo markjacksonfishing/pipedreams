@@ -35,6 +35,12 @@ docker run -p 8501:8501 anuclei/pipedreams:latest
 
 Once the container is running, open your browser and go to `http://localhost:8501` to access the application.
 
+## Kubernetes Deployment
+
+PipeDreams can also be deployed on a Kubernetes cluster. This deployment scenario uses Minikube for local Kubernetes clusters and includes configurations for high availability and autoscaling.
+
+For detailed instructions and YAML configurations, refer to the [Kubernetes Deployment Guide](k8s/k8s.md) in the `k8s` directory.
+
 ## Manual Installation
 
 If you prefer not to use Docker, you can set up the app manually.
@@ -80,7 +86,8 @@ If you prefer not to use Docker, you can set up the app manually.
      streamlit run app.py
      ```
 
-   The application will open in your default web browser at `http://localhost:8501`.
+   The application will open in your default web browser at `http://localhost:8501` and will look like this:
+![PipeDreams Browser](images/running_broswer.jepg)
 
 5. **Deactivate the virtual environment** (when finished):
    ```bash

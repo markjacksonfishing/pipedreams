@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pipedreams-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8501"
+spec:
+  type: LoadBalancer
+  selector:
+    app: pipedreams
+  ports:
+  - protocol: TCP
+    port: 80           # Exposed port on Minikube
+    targetPort: 8501   # Container's port

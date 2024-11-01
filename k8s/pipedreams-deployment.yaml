@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pipedreams-deployment
+  labels:
+    app: pipedreams
+spec:
+  replicas: 2  # Initial replica count for high availability
+  selector:
+    matchLabels:
+      app: pipedreams
+  template:
+    metadata:
+      labels:
+        app: pipedreams
+    spec:
+      containers:
+      - name: pipedreams-container
+        image: anuclei/pipedreams:latest
+        ports:
+        - containerPort: 8501
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8501
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8501
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+      terminationGracePeriodSeconds: 30
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: pipedreams
+            topologyKey: "kubernetes.io/hostname"
