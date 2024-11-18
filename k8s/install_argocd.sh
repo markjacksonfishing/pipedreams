@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Set Argo CD namespace and application variables
 NAMESPACE="argocd"
 APP_NAME="pipedreams"
